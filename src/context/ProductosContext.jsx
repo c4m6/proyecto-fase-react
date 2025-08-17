@@ -8,7 +8,7 @@ export const ProductosProvider = ({ children }) => {
 
   const obtenerProductos = async () => {
     try {
-      const res = await fetch('https://686ac03ae559eba90870d2bb.mockapi.io/productos'); 
+      const res = await fetch('http://localhost:5000/api/products'); 
       const data = await res.json();
       setProductos(data);
     } catch (error) {
@@ -20,7 +20,7 @@ export const ProductosProvider = ({ children }) => {
 
   const agregarProducto = async (nuevoProducto) => {
     try {
-      const res = await fetch('https://686ac03ae559eba90870d2bb.mockapi.io/productos', {
+      const res = await fetch('http://localhost:5000/api/products', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(nuevoProducto),
